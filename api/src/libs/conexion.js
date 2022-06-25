@@ -12,8 +12,8 @@ const sequelize = new Sequelize(URL, {
     logging: false
 })
 
+
+
 setupModel(sequelize)
 
-module.exports = {
-    conn: sequelize
-}
+module.exports = sequelize;

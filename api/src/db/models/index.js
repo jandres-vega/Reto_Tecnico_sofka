@@ -9,8 +9,10 @@ function setupModel(sequelize) {
     NaveSatelite.init(NaveSatelite_Schema, NaveSatelite.config(sequelize));
     NaveSonda.init(NaveSonda_Schema, NaveSonda.config(sequelize));
     NaveTripulada.init(NaveTripulada_Schema, NaveTripulada.config(sequelize))
-    // console.log(sequelize)
-    NaveLanzadera.associate(sequelize.models)
-    NaveSatelite.associate(sequelize.models)
+
+    // NaveLanzadera.belongsTo(NaveSatelite)
+    NaveLanzadera.hasOne(NaveSatelite,{onDelete: 'CASCADE'});
+    NaveSatelite.belongsTo(NaveLanzadera)
+
 }
 module.exports = setupModel;

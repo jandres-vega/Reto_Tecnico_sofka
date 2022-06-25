@@ -1,6 +1,6 @@
 const {Model, DataTypes} = require('sequelize');
-
-const NAVE_MODEL_LANZADERA = 'neves_lanzadera';
+const {NAVE_MODEL_SATELITE} = require('./naveSatelite')
+const NAVE_MODEL_LANZADERA = 'naves_lanzadera';
 
 const NaveLanzadera_Schema = {
     id:{
@@ -9,7 +9,7 @@ const NaveLanzadera_Schema = {
         allowNull: false,
         type: DataTypes.INTEGER
     },
-    name: {
+    nameNave: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -34,17 +34,13 @@ const NaveLanzadera_Schema = {
         allowNull: false,
         unique: true,
     }
-
 }
 
 class NaveLanzadera extends Model{
 
     static associate(models) {
         //associaciones
-        this.hasMany(models.NaveSatelite, {
-            as: 'naves_satelites',
-            foreignKey: 'naveLanzaderaId'
-        });
+
     }
     static config(sequelize) {
         return {

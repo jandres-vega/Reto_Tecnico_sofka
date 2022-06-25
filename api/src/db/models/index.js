@@ -14,5 +14,11 @@ function setupModel(sequelize) {
     NaveLanzadera.hasOne(NaveSatelite,{onDelete: 'CASCADE'});
     NaveSatelite.belongsTo(NaveLanzadera)
 
+    NaveLanzadera.hasOne(NaveSonda, {onDelete: 'CASCADE'});
+    NaveSonda.belongsTo(NaveLanzadera)
+
+    NaveLanzadera.hasOne(NaveTripulada, {onDelete: 'CASCADE'});
+    NaveTripulada.belongsTo(NaveLanzadera)
+
 }
 module.exports = setupModel;

@@ -1,10 +1,9 @@
 const { models } = require('../libs/conexion');
 const {NaveSatelite} = require("../db/models/naveSatelite");
 
-class NaveSteliteService {
+class NaveSondaService {
 
     constructor() {}
-
     async create(data) {
         const {
             nameNave,
@@ -13,9 +12,9 @@ class NaveSteliteService {
             speed_max,
             push,
             type,
-            nameSatelite,
-            locationEart,
-            typeLanding
+            nameS,
+            location,
+            earthDistance
         } = data
         const newNaveL = await models.NaveLanzadera.create({
             nameNave,
@@ -25,25 +24,15 @@ class NaveSteliteService {
             push,
             type,
         })
-        const newNaveS = await models.NaveSatelite.create({
-            nameSatelite,
-            locationEart,
-            typeLanding
+        const newNaveS = await models.NaveSonda.create({
+            nameS,
+            location,
+            earthDistance
         })
-        return await newNaveL.setNaveSatelite(newNaveS);
-    }
-
-    async find() {
+        return await newNaveL.setNaveSonda(newNaveS);
 
     }
-    async findOne(id) {
-        const intId = parseInt(id);
-        return (await this.find()).filter(data => data.id === intId);
-    }
-    delete(id) {
 
-    }
-    
 }
 
-module.exports = NaveSteliteService;
+module.exports = NaveSondaService;

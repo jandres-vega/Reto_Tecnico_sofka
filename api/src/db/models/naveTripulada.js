@@ -9,12 +9,12 @@ const NaveTripulada_Schema = {
         allowNull: false,
         type: DataTypes.INTEGER
     },
-    name: {
+    nameT: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     numberCrew: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     purposeNave: {
@@ -32,7 +32,7 @@ class NaveTripulada extends Model{
         return {
             sequelize,
             tableName: NAVE_MODEL,
-            modelName: 'naves_tripuladas',
+            modelName: 'NaveTripulada',
             timestamps: false
         }
     }

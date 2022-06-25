@@ -14,7 +14,7 @@ const NaveSatelite_Schema = {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    location: {
+    locationEart: {
         type: DataTypes.STRING,
         allowNull: false,
     },

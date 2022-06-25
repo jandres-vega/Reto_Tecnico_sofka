@@ -9,7 +9,7 @@ app.use(express.json())
 
 routesA(app)
 
-sequelize.sync({force: true}).then(() => {
+sequelize.sync({force: false}).then(() => {
     app.listen(port, () => {
         console.log('listen on port '+ port)
     })

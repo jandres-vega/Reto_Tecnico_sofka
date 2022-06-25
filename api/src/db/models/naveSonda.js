@@ -10,7 +10,7 @@ const NaveSonda_Schema = {
         allowNull: false,
         type: DataTypes.INTEGER
     },
-    name: {
+    nameS: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -34,7 +34,7 @@ class NaveSonda extends Model{
         return {
             sequelize,
             tableName: NAVE_MODEL,
-            modelName: 'naves_sonda',
+            modelName: 'NaveSonda',
             timestamps: false
         }
     }

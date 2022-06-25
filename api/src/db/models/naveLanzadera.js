@@ -32,7 +32,6 @@ const NaveLanzadera_Schema = {
     type: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
     }
 }
 

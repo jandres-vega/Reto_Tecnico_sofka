@@ -1,5 +1,5 @@
 const { models } = require('../libs/conexion');
-const {NaveSatelite} = require("../db/models/naveSatelite");
+const {NaveLanzadera} = require("../db/models/naveLanzadera");
 
 class NaveSteliteService {
 
@@ -34,12 +34,18 @@ class NaveSteliteService {
     }
 
     async find() {
-
+        return await models.NaveSatelite.findAll({
+            include: {
+                model: NaveLanzadera
+            }
+        })
     }
+
     async findOne(id) {
         const intId = parseInt(id);
         return (await this.find()).filter(data => data.id === intId);
     }
+
     delete(id) {
 
     }

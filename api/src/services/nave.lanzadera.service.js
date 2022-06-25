@@ -36,5 +36,6 @@ class NaveLanzaderaR {
         return await models.NaveLanzadera.findAll()
 
     }
+
 }
 module.exports = NaveLanzaderaR;

@@ -7,11 +7,13 @@ const serviceSatelite = new NaveSteliteService();
 
 
 router.get('/',async (req, res) => {
-    try{
-        res.json(await serviceSatelite.find())
+    try {
+        const naveSatelite = await serviceSatelite.find();
+        res.status(200).send(naveSatelite)
     }catch (e) {
         console.error(e)
     }
+
 })
 
 router.get('/:id', async (req, res) => {

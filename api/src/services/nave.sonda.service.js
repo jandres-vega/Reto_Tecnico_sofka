@@ -1,5 +1,5 @@
 const { models } = require('../libs/conexion');
-const {NaveSatelite} = require("../db/models/naveSatelite");
+const {NaveLanzadera} = require("../db/models/naveLanzadera");
 
 class NaveSondaService {
 
@@ -31,6 +31,14 @@ class NaveSondaService {
         })
         return await newNaveL.setNaveSonda(newNaveS);
 
+    }
+
+    async find() {
+        return await models.NaveSonda.findAll({
+            include: {
+                model:NaveLanzadera
+            }
+        })
     }
 
 }

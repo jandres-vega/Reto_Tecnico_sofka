@@ -1,0 +1,35 @@
+body {
+    background: linear-gradient(135deg, rgba(34,193,195,1) 23%, rgba(253,247,45,1) 100%);
+}
+.div-info {
+    position: relative;
+    top: 100px;
+    text-align: center;
+}
+p {
+    padding: 0;
+    font-size: 45px;
+}
+.div-info h1{
+    font-size: 85px;
+    color: red;
+    left: 10px;
+}
+.div-btn-landing {
+    position: relative;
+    top: 30px;
+}
+.div-btn-landing button{
+    height: 60px;
+    width: 130px;
+    border-style: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.div-p {
+    position: relative;
+    top: 30px;
+}
+button:hover {
+    background-color: yellow;
+}

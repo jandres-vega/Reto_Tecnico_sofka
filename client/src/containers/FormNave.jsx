@@ -1,5 +1,6 @@
 import React from 'react';
 import {Formik, Form, Field} from 'formik';
+import '../styles/FormNave.css'
 const FormNave = () => {
     return (
         <div>

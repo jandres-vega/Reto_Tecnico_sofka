@@ -1,0 +1,41 @@
+.div-card-tri {
+    text-align: center;
+    background-color: wheat;
+    width: 250px;
+    border-radius: 20px;
+    height: 250px;
+    display: flex;
+    margin: 10px;
+}
+p {
+    padding: 0;
+    font-size: 15px;
+}
+h3 {
+    padding: 0;
+    margin: 0;
+}
+h4 {
+    padding: 0;
+    margin: 0;
+}
+
+.div-gen {
+    text-align: center;
+    position: relative;
+    height:  120px;
+    width: 100%;
+    left: 30px;
+}
+.div-info-type {
+    position: relative;
+    text-align: center;
+    top: 120px;
+    right: 100px;
+    height: 120px;
+    display: inline-block;
+}
+.div-info-type h4 {
+    font-family: cursive;
+    font-size: 18px;
+}

@@ -1,0 +1,16 @@
+.container-card-satelite {
+    display: flex;
+    margin: 10px;
+    background-color: black;
+}
+
+.container-cardS {
+    display: flex;
+    background-color: black;
+    margin: 10px;
+}
+.containers-cardT {
+    display: flex;
+    background-color: black;
+    margin: 10px;
+}

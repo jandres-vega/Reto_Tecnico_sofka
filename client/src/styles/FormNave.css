@@ -1,0 +1,15 @@
+main {
+    position: relative;
+    left: 30%;
+    height: 100%;
+    width: 350px;
+    border-style: double;
+    display:flex;
+}
+.form {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    glyph-orientation-vertical: inherit;
+    gap: 10px;
+}

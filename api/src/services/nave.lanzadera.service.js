@@ -1,8 +1,5 @@
 const { models } = require('../libs/conexion');
-//const {NaveLanzadera} = require("../db/models/naveLanzadera");
-const {NaveSatelite} = require("../db/models/naveSatelite");
-const {NaveTripulada} = require("../db/models/naveTripulada");
-const {NaveSonda} = require("../db/models/naveSonda");
+const {NaveLanzadera} = require("../db/models/naveLanzadera");
 
 class NaveLanzaderaR {
 
@@ -34,6 +31,14 @@ class NaveLanzaderaR {
         // const attributes2 = ['id','nameT','numberCrew','purposeNave'];
         // const attributes3 = ['id','nameS','location','earthDistance'];
         return await models.NaveLanzadera.findAll()
+
+    }
+
+    async findByName(name) {
+        const naveL =  await this.find()
+        const nameNave  = naveL.filter(data => data.nameNave === name)
+        console.log(nameNave)
+        return nameNave
 
     }
 

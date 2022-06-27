@@ -17,7 +17,6 @@ const ListCard = () => {
         dispatch(getNavesSonda())
         dispatch(getNavesTripulada())
     },[]);
-    console.log(navesTripulada)
 
     return (
         <div className="div-con">
@@ -26,6 +25,7 @@ const ListCard = () => {
                     allNaveSatelite?.map(data => (
                         <CardNave
                             key={data.id}
+                            id={data.id}
                             nameNave={data.NaveLanzadera.nameNave}
                             weight={data.NaveLanzadera.weight}
                             speed_max={data.NaveLanzadera.speed_max}
@@ -42,7 +42,7 @@ const ListCard = () => {
                 {
                     allNaveSonda?.map(e => (
                         <CardNaveSonda
-                            key={e.key}
+                            key={e.id}
                             nameNave={e.NaveLanzadera.nameNave}
                             weight={e.NaveLanzadera.weight}
                             speed_max={e.NaveLanzadera.speed_max}
@@ -58,6 +58,7 @@ const ListCard = () => {
                 {
                     navesTripulada?.map(index => (
                         <CardNaveTripulada
+                            key={index.id}
                             nameNave={index.NaveLanzadera.nameNave}
                             weight={index.NaveLanzadera.weight}
                             speed_max={index.NaveLanzadera.speed_max}
@@ -69,7 +70,6 @@ const ListCard = () => {
                         />
                     ))
                 }
-
             </div>
         </div>
     );

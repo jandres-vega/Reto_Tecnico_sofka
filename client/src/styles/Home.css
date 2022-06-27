@@ -1,0 +1,9 @@
+.div-btns {
+    position: relative;
+    display: flex;
+    left: 400px;
+}
+button {
+    height: 50px;
+    margin: 15px;
+}

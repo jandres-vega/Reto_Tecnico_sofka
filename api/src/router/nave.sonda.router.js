@@ -5,9 +5,15 @@ const router = express();
 const serviceSonda = new NaveSondaService();
 
 router.get('/',async (req,res) => {
+    const {name} = req.query
     try {
-        const naveSatelite = await serviceSonda.find();
-        res.status(200).send(naveSatelite)
+        if (name) {
+            const nameNave = await serviceSonda.findByName(name);
+            res.status(200).send(nameNave)
+        }else {
+            const naveSatelite = await serviceSonda.find();
+            res.status(200).send(naveSatelite)
+        }
     }catch (e) {
         console.error(e)
     }

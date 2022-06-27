@@ -41,6 +41,11 @@ class NaveSondaService {
         })
     }
 
+    async findByName(name) {
+        const naveSonda = await this.find()
+        return naveSonda.filter(data => data.nameS === name);
+    }
+
 }
 
 module.exports = NaveSondaService;

@@ -9,6 +9,38 @@ export function getNavesSatelite() {
         })
     }
 }
+
+export function getNaveByName(name) {
+    return async function (dispatch) {
+        let nave = await axios.get(`http://localhost:3005/satelite?name=${name}`)
+        return dispatch({
+            type: 'GET_NAVE_BY_NAME_SATELITE',
+            payload: nave.data
+        })
+    }
+
+}
+export function deleteNaveSatelite(id) {
+    return async function (dispatch) {
+        let nave = await axios.get(`http://localhost:3005/satelite/${id}`)
+        return dispatch({
+            type: 'DELETE_NAVE_SATELITE',
+            payload: nave.data
+        })
+    }
+
+}
+export function getNaveByNames(name) {
+    return async function (dispatch) {
+        let naveS = await axios.get(`http://localhost:3005/sonda?name=${name}`)
+        return dispatch({
+            type: 'GET_NAVE_BY_NAME_SONDA',
+            payload: naveS.data
+        })
+    }
+
+}
+
 export function getNavesSonda() {
     return async function (dispatch) {
         const allNaveSonda = await axios.get('http://localhost:3005/sonda');
@@ -26,5 +58,25 @@ export function getNavesTripulada() {
             type: 'GET_ALL_NAVE_TRIPULADA',
             payload: allNaveTripulada.data
         })
+    }
+}
+
+export function createNaveTripulada(payload) {
+    return async function() {
+        return await axios.post('http://localhost:3005/tripulada', payload)
+
+    }
+}
+export function createNaveSonda(payload) {
+    console.log(payload)
+    return async function() {
+        return await axios.post('http://localhost:3005/sonda', payload)
+
+    }
+}
+export function createNaveSatelite(payload) {
+    return async function() {
+        return await axios.post('http://localhost:3005/satelite', payload)
+
     }
 }

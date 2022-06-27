@@ -1,7 +1,11 @@
 import React from 'react';
+import {useDispatch} from "react-redux";
+import {createNaveTripulada} from "../redux/actions/actions"
 import {Formik, Form, Field} from 'formik';
-import '../styles/FormNave.css'
-const FormNave = () => {
+import {Link} from "react-router-dom";
+
+const FormNaveTripulado = () => {
+    const dispatch = useDispatch()
     return (
         <div>
             <Formik initialValues={{
@@ -10,13 +14,18 @@ const FormNave = () => {
                 cap_combustible: '',
                 speed_max: '',
                 push: '',
-                type: '',
+                type: 'tripulada',
+                nameT: '',
+                earthDistance: '',
+                location: ''
             }}
-                    onSubmit={(valores) => {
-                        console.log(valores)
+                    onSubmit={(valores, {resetForm}) => {
+                        dispatch(createNaveTripulada(valores));
+                        resetForm()
+
                     }}
             >
-                {({}) => (
+                {({values}) => (
                     <main>
                         <Form className="form">
                             <div className="form-grup">
@@ -70,25 +79,67 @@ const FormNave = () => {
                                 </div>
                             </div>
                             <div className="form-grup">
-                                <label htmlFor="name" className="form-label">Tipo De Nave: </label>
+                                <label htmlFor="type" className="form-label">Tipo De Nave: </label>
                                 <div className="form-input-grup">
-                                    <Field name="type" as="select">
-                                        <option value="tripulade">Nave Tripulada</option>
-                                        <option value="satelite">Nave satelite</option>
-                                        <option value="sonda">Nave Sonda</option>
+                                    <Field name="type"
+                                           type="text"
+                                           id="type"
+                                    >
+
                                     </Field>
+                                </div>
+                            </div>
+                            <div className="form-grup">
+                                <label htmlFor="nameT" className="form-label">nombre de la nave tripulada: </label>
+                                <div className="form-input-grup">
+                                    <Field name="nameT"
+                                           placeholder="infrese el nombre de la nave"
+                                           type="text"
+                                           id="nameT"
+                                    >
+
+                                    </Field>
+                                </div>
+                            </div>
+                            <div className="form-grup">
+                                <label htmlFor="purposeNave" className="form-label">Proposito: </label>
+                                <div className="form-input-grup">
+                                    <Field className="form-input"
+                                           type="text"
+                                           name="purposeNave"
+                                           placeholder="ingrese su proposito"
+                                           id="purposeNave"
+                                    />
+                                </div>
+                            </div>
+                            <div className="numberCrew">
+                                <label htmlFor="nameNave" className="form-label">Numero de tripulantes: </label>
+                                <div className="form-input-grup">
+                                    <Field className="form-input"
+                                           type="text" name="numberCrew"
+                                           placeholder="ingrese Nombre"
+                                           id="numberCrew"
+                                    />
                                 </div>
                             </div>
                             <div>
                                 <button type="submit">Crear Nave</button>
                             </div>
                         </Form>
+                        <div>
+                            <Link to="/home">
+                                <button>volver</button>
+                            </Link>
+                        </div>
                     </main>
                 )}
 
             </Formik>
         </div>
+
+
+
     );
 };
 
-export default FormNave;
+export default FormNaveTripulado;

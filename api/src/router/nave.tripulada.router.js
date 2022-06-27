@@ -5,6 +5,7 @@ const router = express();
 const serviceTripulada = new NaveTripuladaService()
 
 router.get('/', async (req, res) => {
+
     try {
         const naveTripulante = await serviceTripulada.find();
         res.status(200).send(naveTripulante)
@@ -12,6 +13,7 @@ router.get('/', async (req, res) => {
         console.error(e)
     }
 })
+
 
 router.post('/', async(req,res)=> {
     try {

@@ -46,8 +46,18 @@ class NaveSteliteService {
         return (await this.find()).filter(data => data.id === intId);
     }
 
-    delete(id) {
+    async findByName(name) {
+        const naveSatelites = await this.find()
+        return naveSatelites.filter(data => data.nameSatelite === name);
+    }
 
+    async delete(id) {
+        const intId = parseInt(id);
+        await models.NaveSatelite.destroy({
+            where: {
+                'id': intId
+            }
+        })
     }
     
 }

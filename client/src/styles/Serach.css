@@ -1,0 +1,12 @@
+.btn-search {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid
+}
+.input-search {
+    width: 200px;
+    height: 30px;
+    border-style: none;
+    border-radius: 10px;
+}

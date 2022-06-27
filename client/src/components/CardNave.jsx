@@ -1,7 +1,16 @@
 import React from 'react';
+import {useState} from "react";
+import {useDispatch} from "react-redux";
+import {deleteNaveSatelite} from '../redux/actions/actions'
 import '../styles/CardNave.css';
 
-const CardNave = ({nameNave, speed_max,weight,push,type,locationEart,typeLanding}) => {
+const CardNave = ({id ,nameNave, speed_max,weight,push,type,locationEart,typeLanding}) => {
+    const [state, setState] =  useState(0)
+    const dispatch = useDispatch();
+
+    function handleDelete(id) {
+        dispatch(deleteNaveSatelite(id))
+    }
     return (
         <div>
             <div className="div-card">
